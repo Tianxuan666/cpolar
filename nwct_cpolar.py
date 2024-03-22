@@ -71,7 +71,7 @@ def check_os():
 # 下载主程序
 def download_cpolar(cpu):
     if not os.path.exists("cpolar.py"):
-        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/cpolar/main/cpolar.py")
+        res = requests.get("https://raw.yzuu.cf/jiankujidu/cpolar/main/cpolar.py")
         with open("cpolar.py", "wb") as f:
             f.write(res.content)
     if not os.path.exists("cpolar"):
@@ -102,7 +102,7 @@ def process_daemon():
     qlurl = get_url()
     try:
         res = requests.get(qlurl + "/login").text
-        if "/images/g5.ico" in res or "/images/favicon.svg" in res:
+        if "/images/g5.ico" in res or "/favicon.svg" in res:
             return True
         else:
             return False
@@ -136,7 +136,7 @@ def load_send():
     sys.path.append(cur_path)
     sendNotifPath = cur_path + "/sendNotify.py"
     if not os.path.exists(sendNotifPath):
-        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/cpolar/main/sendNotify.py")
+        res = requests.get("https://raw.yzuu.cf/jiankujidu/cpolar/main/sendNotify.py")
         with open(sendNotifPath, "wb") as f:
             f.write(res.content)
 
